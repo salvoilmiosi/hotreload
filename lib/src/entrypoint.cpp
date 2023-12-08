@@ -2,7 +2,7 @@
 
 #include "shared_object_export.h"
 
-#include <iostream>
+#include <fmt/format.h>
 
 #ifdef WIN32
     #define STDCALL __stdcall
@@ -14,7 +14,7 @@ namespace shared_object {
     class object_impl : public object {
     public:
         void hello() override {
-            std::cout << "Hello World\n";
+            fmt::print("Hello World\n");
         }
     };
 };

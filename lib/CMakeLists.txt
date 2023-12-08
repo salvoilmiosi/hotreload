@@ -7,6 +7,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_library(shared_object SHARED)
 target_include_directories(shared_object PUBLIC include)
 
+find_package(fmt REQUIRED)
+target_link_libraries(shared_object PRIVATE fmt::fmt-header-only)
+
 add_subdirectory(src)
 
 include(GenerateExportHeader)
